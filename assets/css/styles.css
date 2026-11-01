@@ -351,8 +351,10 @@ input[type="range"] {
   border-block: 1px solid var(--line);
 }
 .plats {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 100%;
   gap: 14px;
   margin-top: 36px;
 }
@@ -364,6 +366,7 @@ input[type="range"] {
   background: var(--bg);
   display: grid;
   gap: 4px;
+  width: 219px;
   transition:
     border-color 0.2s,
     transform 0.2s;
@@ -533,6 +536,11 @@ footer .wrap a:first-of-type {
   }
   nav a.l {
     display: none;
+  }
+}
+@media (max-width: 790px) {
+  .plats a{
+    width: 100%;
   }
 }
 @media (max-width: 620px) {
