@@ -16,35 +16,35 @@ const CONFIG = {
   platforms: [
     {
       id: "android",
-      icon: "/assets/img/os-and.png",
+      icon: "assets/img/os-and.png",
       note: "Google Play or APK",
       href: "https://github.com/mtruvius/costify3d/releases/latest",
       status: "soon",
     },
     { 
       id: "ios", 
-      icon: "/assets/img/os-ios.png",
+      icon: "assets/img/os-ios.png",
       note: "App Store", 
       href: "https://github.com/mtruvius/costify3d/releases/latest", 
       status: "soon" 
     },
     {
       id: "mac",
-      icon: "/assets/img/os-mac.png",
+      icon: "assets/img/os-mac.png",
       note: "Apple silicon and Intel (.dmg)",
       href: "https://github.com/mtruvius/costify3d/releases/latest",
       status: "ready",
     },
     {
       id: "windows",
-      icon: "/assets/img/os-win.png",
+      icon: "assets/img/os-win.png",
       note: "Installer (.msi)",
       href: "https://github.com/mtruvius/costify3d/releases/latest",
       status: "ready",
     },
     {
       id: "linux",
-      icon: "/assets/img/os-lin.png",
+      icon: "assets/img/os-lin.png",
       note: ".AppImage and .deb",
       href: "https://github.com/mtruvius/costify3d/releases/latest",
       status: "ready",
