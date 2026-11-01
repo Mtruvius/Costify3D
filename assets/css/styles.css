@@ -75,7 +75,7 @@ body::before {
   z-index: -1;
   background:
     linear-gradient(rgba(18, 18, 18, 0.9), rgba(18, 18, 18, 0.98)),
-    url(/assets/img/bg.png) center/cover no-repeat;
+    url(assets/img/bg.png) center/cover no-repeat;
 }
 
 nav {
