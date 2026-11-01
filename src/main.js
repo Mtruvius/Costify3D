@@ -1,6 +1,6 @@
 import "./styles.css";
 import { initializePaddle } from "@paddle/paddle-js";
-
+const images = import.meta.glob('./assets/*.png', { eager: true, query: 'url' });
 /* ---------- EDIT THESE ---------- */
 const CONFIG = {
   repo: "https://github.com/mtruvius/costify3d",
@@ -19,35 +19,35 @@ const CONFIG = {
   platforms: [
     {
       id: "android",
-      icon: "src/assets/os-and.png",
+      icon: images['./assets/os-and.png'],
       note: "Google Play or APK",
       href: "https://github.com/mtruvius/costify3d/releases/latest",
       status: "soon",
     },
     { 
       id: "ios", 
-      icon: "src/assets/os-ios.png",
+      icon: images['./assets/os-ios.png'],
       note: "App Store", 
       href: "https://github.com/mtruvius/costify3d/releases/latest", 
       status: "soon" 
     },
     {
       id: "mac",
-      icon: "src/assets/os-mac.png",
+      icon: images['./assets/os-mac.png'],
       note: "Apple silicon and Intel (.dmg)",
       href: "https://github.com/mtruvius/costify3d/releases/latest",
       status: "ready",
     },
     {
       id: "windows",
-      icon: "src/assets/os-win.png",
+      icon: images['./assets/os-win.png'],
       note: "Installer (.msi)",
       href: "https://github.com/mtruvius/costify3d/releases/latest",
       status: "ready",
     },
     {
       id: "linux",
-      icon: "src/assets/os-lin.png",
+      icon: images['./assets/os-lin.png'],
       note: ".AppImage and .deb",
       href: "https://github.com/mtruvius/costify3d/releases/latest",
       status: "ready",
