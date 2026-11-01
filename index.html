@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Costify3D – Know the cost. Love the print.</title>
+<meta name="description" content="Costify3D is a 3D printing cost calculator and filament tracker for Android, iOS, macOS, Windows and Linux.">
+<meta property="og:title" content="Costify3D – Know the cost. Love the print.">
+<meta property="og:description" content="Price every print and track every spool, on every device.">
+<meta property="og:image" content="icon.png">
+<link rel="icon" href="icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#top"><img src="icon.png" alt=""><span>Costify<b>3D</b></span></a>
+    <a class="l" href="#spools">Filament tracker</a>
+    <a class="l" href="#download">Download</a>    
+    <a class="btn sm" href="#pricing">Pricing</a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <h1><span class="rise">Know the cost.</span><span class="rise">Love the print.</span></h1>
+      <p class="lead rise">Work out what every print really costs in filament, power and your own time, and keep track of every spool you own. On your phone, laptop and desktop.</p>
+      <div class="cta rise">
+        <a class="btn" id="dlMain" href="#download">Download Costify3D</a>
+        <a class="btn ghost" href="#pricing">See pricing</a>
+      </div>
+      <small class="rise">Free to start. Works offline. Android, iOS, macOS, Windows and Linux.</small>
+    </div>
+
+    <div class="calc float" aria-label="Live print cost calculator">
+      <h3>Try it: what will this print cost?</h3>
+      <label for="w">Filament used <output id="wo"></output></label>
+      <input id="w" type="range" min="5" max="1000" value="150">
+      <label for="t">Print time <output id="to"></output></label>
+      <input id="t" type="range" min="10" max="2400" step="5" value="165">
+      <label for="k">Filament price per kg <output id="ko"></output></label>
+      <input id="k" type="range" min="150" max="900" step="10" value="120">
+      <div class="total"><strong id="tot">R 0.00</strong><span>total</span></div>
+      <div class="bar" aria-hidden="true"><i id="b1" style="background:var(--blue)"></i><i id="b2" style="background:var(--amber)"></i><i id="b3" style="background:var(--violet)"></i></div>
+      <ul class="rows">
+        <li style="--c:var(--blue)">Filament <em id="r1"></em></li>
+        <li style="--c:var(--amber)">Electricity <em id="r2"></em></li>
+        <li style="--c:var(--violet)">Your time <em id="r3"></em></li>
+      </ul>
+      <div class="tip" id="tip"></div>
+    </div>
+  </div>
+</header>
+
+<section id="spools">
+  <div class="wrap split">
+    <div>
+      <h2>Never start a print on an empty spool</h2>
+      <p class="mute">Log every spool with its material, colour and weight. Costify3D subtracts what each print uses, so you always know what is left before you slice.</p>
+      <ul class="list">
+        <li style="--c:var(--blue)"><b>Cost breakdown</b><span>See exactly where the money goes, per print and per layer.</span></li>
+        <li style="--c:var(--green)"><b>Slicer import</b><span>Bring in .gcode or .3mf files and skip the typing.</span></li>
+        <li style="--c:var(--violet)"><b>Saved prints</b><span>Keep every quote and compare prints side by side.</span></li>
+        <li style="--c:var(--amber)"><b>Savings tips</b><span>Spot cheaper settings, like lower infill, before you print.</span></li>
+      </ul>
+    </div>
+    <div class="spools" id="spoolGrid">
+      <div class="spool" style="--p:68"><svg viewBox="0 0 80 80"><circle class="trk" cx="40" cy="40" r="32"/><circle class="val" cx="40" cy="40" r="32" stroke="#4da8ff"/></svg><div><b>PLA Black</b><small>680 g left</small></div></div>
+      <div class="spool" style="--p:42"><svg viewBox="0 0 80 80"><circle class="trk" cx="40" cy="40" r="32"/><circle class="val" cx="40" cy="40" r="32" stroke="#7b5cff"/></svg><div><b>PLA Blue</b><small>420 g left</small></div></div>
+      <div class="spool" style="--p:75"><svg viewBox="0 0 80 80"><circle class="trk" cx="40" cy="40" r="32"/><circle class="val" cx="40" cy="40" r="32" stroke="#2ee6a6"/></svg><div><b>PETG White</b><small>750 g left</small></div></div>
+      <div class="spool" style="--p:15"><svg viewBox="0 0 80 80"><circle class="trk" cx="40" cy="40" r="32"/><circle class="val" cx="40" cy="40" r="32" stroke="#ffb84d"/></svg><div><b>PLA Green</b><small>150 g left. Running low</small></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="plat" id="download">
+  <div class="wrap">
+    <h2>One app, every device</h2>
+    <p class="mute">Your spools and saved prints go where you go. Pick your platform.</p>
+    <div class="plats" id="plats"></div>
+  </div>
+</section>
+
+<section id="pricing">
+  <div class="wrap">
+    <h2>Start free. Upgrade when you outgrow it.</h2>
+    <p class="mute">Pay once as a hobbyist, or subscribe if you sell prints. Paddle handles tax and local currency at checkout.</p>
+    <div class="plans">
+      <div class="plan">
+        <h3>Free</h3>
+        <div class="price">$0</div>
+        <div class="bill">Free forever</div>
+        <ul><li>Cost calculator</li><li>Up to 3 spools</li><li>10 saved prints</li></ul>
+        <a class="btn ghost" href="#download">Download</a>
+      </div>
+      <div class="plan pro">
+        <h3>Printer</h3>
+        <div class="price"><span id="printerPrice">$19</span></div>
+        <div class="bill">One-time payment, yours to keep</div>
+        <ul><li>Unlimited spools and saved prints</li><li>.gcode and .3mf import</li><li>Per-layer cost breakdown</li><li>Savings tips</li></ul>
+        <button class="btn" data-buy="printer" type="button">Buy Printer</button>
+      </div>
+      <div class="plan mfr">
+        <h3>Manufacturer</h3>
+        <div class="price"><span id="mfrPrice">$6</span> <small>/ month</small></div>
+        <div class="bill" id="mfrBill"></div>
+        <div class="seg" id="seg" role="group" aria-label="Billing period">
+          <button type="button" data-m="3">3 months</button><button type="button" data-m="6">6 months</button><button type="button" data-m="12" class="on">12 months</button>
+        </div>
+        <ul><li>Everything in Printer</li><li>Batch pricing for production runs</li><li>Client quotes with your margin</li><li>Priority support</li></ul>
+        <button class="btn" data-buy="mfr" type="button">Subscribe</button>
+      </div>
+    </div>
+    <div id="thanks" role="status">Thanks for your purchase! Your receipt and license details are on their way to your email.</div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="yr"></span> Costify3D</span>
+    <a href="#" id="repo">GitHub</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="terms.html">Terms</a>
+    <a href="refunds.html">Refunds</a>
+  </div>
+</footer>
+
+<script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
