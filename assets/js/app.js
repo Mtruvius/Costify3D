@@ -3,7 +3,7 @@ const CONFIG = {
   repo: "https://github.com/mtruvius/costify3d",
   paddle: {
     env: "sandbox", // change to "production" when you go live
-    token: "test_REPLACE_WITH_CLIENT_SIDE_TOKEN",
+    token: "{{PADDLE_API_SANDBOX_KEY}}",
     priceIds: {
       // one Paddle price per product
       printer: "pri_REPLACE_ONE_TIME",
