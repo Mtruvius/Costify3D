@@ -6,17 +6,18 @@ import mac from './assets/os-mac.png';
 import windows from './assets/os-win.png';
 import linux from './assets/os-lin.png';
 /* ---------- EDIT THESE ---------- */
+
 const CONFIG = {
   repo: "https://github.com/mtruvius/costify3d",
   paddle: {
     env: "sandbox", // change to "production" when you go live
-    token: import.meta.env.PADDLE_CLIENT_TOKEN,
+    token: "test_f341e045a08a09f4286a7840c35",
     priceIds: {
       // one Paddle price per product
-      printer: import.meta.env.PRI_ID_ONE_TIME,
-      m3: import.meta.env.PRI_ID_3_MONTH, // recurring, billed every 3 months
-      m6: import.meta.env.PRI_ID_6_MONTH, // recurring, billed every 6 months
-      m12: import.meta.env.PRI_ID_12_MONTH, // recurring, billed every 12 months
+      printer: "pri_01m6c488vj91gb3thr5d8z34nf",
+      m3: "pri_01m6c4jnrgf1a56v47fbg53s17", // recurring, billed every 3 months
+      m6: "pri_01m6c4gj5fdm18b5a2tvt4v27r", // recurring, billed every 6 months
+      m12: "pri_01m6c4edhjvm3p3kva5h6wpkj3", // recurring, billed every 12 months
     },
   },
   // status: "ready" links to the release asset, "soon" shows a notice
@@ -145,10 +146,32 @@ const P = CONFIG.paddle,
 const FALL = { 3: 27, 6: 48, 12: 72 }; // fallback totals in USD until Paddle returns real prices
 const live = {}; // priceKey -> { total, cur }
 let months = 12;
+
+async function getGeoLocale() {
+  try {
+    // No account or key needed, high free limits
+    const response = await fetch('http://ip-api.com/json');
+    const data = await response.json();
+    return data.countryCode;
+  } 
+  catch (error) {
+      console.error("Fallback to browser settings:", error);
+      return navigator.language;
+  } 
+}
+let COUNTRY = await getGeoLocale();
+
 const money = (v, cur) =>
   new Intl.NumberFormat(undefined, { style: "currency", currency: cur }).format(
     v,
   );
+
+const minorToMajor = (n, cur) =>
+  n /
+  10 **
+    new Intl.NumberFormat("en", { style: "currency", currency: cur })
+      .resolvedOptions().maximumFractionDigits;
+
 function renderMfr() {
   const d = live["m" + months],
     total = d ? d.total : FALL[months],
