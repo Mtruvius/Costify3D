@@ -1,0 +1,22 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+:root{--bg:#121212;--panel:#1e1e1e;--line:#2a2a2a;--text:#e5e7eb;--mute:#9ca3af;--blue:#4da8ff;--amber:#ffb84d}
+*{box-sizing:border-box;margin:0}
+body{background:var(--bg);color:var(--text);font:400 16px/1.75 "Poppins",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+header{border-bottom:1px solid var(--line);background:rgba(30,30,30,.6)}
+header div,main{max-width:760px;margin:0 auto;padding:0 24px}
+header div{display:flex;align-items:center;gap:10px;height:64px}
+header img{width:32px;height:32px}
+header a{color:var(--text);text-decoration:none;font-weight:700;font-size:1.2rem;margin-right:auto}
+header nav a{font-weight:400;font-size:.9rem;color:var(--mute);margin-left:18px}
+main{padding-top:56px;padding-bottom:96px}
+h1{font-size:clamp(2rem,5vw,2.8rem);font-weight:700;letter-spacing:-.02em;line-height:1.15}
+h2{font-size:1.25rem;font-weight:600;margin:40px 0 8px}
+.meta{color:var(--mute);margin:8px 0 28px}
+p,li{color:#d1d5db;max-width:68ch}
+p{margin-top:10px}
+ul{padding-left:22px;margin-top:10px}
+li{margin-top:6px}
+a{color:var(--blue)}
+mark{background:rgba(255,184,77,.16);color:var(--amber);padding:0 5px;border-radius:5px}
+.note{margin-top:24px;padding:14px 16px;border:1px solid rgba(255,184,77,.4);background:rgba(255,184,77,.08);border-radius:12px;color:var(--amber);font-size:.9rem}
+footer{border-top:1px solid var(--line);padding:28px 24px;text-align:center;color:var(--mute);font-size:.85rem}
